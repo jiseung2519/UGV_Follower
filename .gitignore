@@ -1,0 +1,5 @@
+# Ignore nested repositories
+RNE_drone_tracking/
+mavros/
+
+

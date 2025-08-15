@@ -1,0 +1,13 @@
+<launch>
+    <!-- Run the centroid-only target detector node -->
+    <node pkg="target_detector" type="target_detector_simple" name="target_detector_simple" output="screen">
+        <param name="depthcam_topic" value="/iris/camera/depth/points"/>
+  </node>
+
+    <!-- Static transform between base_link and camera_link -->
+    <!-- Arguments: x y z yaw pitch roll parent child -->
+    <!--args="0.1 0.0 0.0 2.3562 0 -1.5708 drone_base_link camera_link-->
+    <!-- camera is 0.1m forward to the drone's base_link, looking 45 degrees down -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="camera_tf_pub"
+          args="0.1 0.0 0.0 -1.5708 0 -2.3562 drone_base_link camera_link"/>
+</launch>

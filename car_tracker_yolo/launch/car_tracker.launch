@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="car_tracker_node" type="camera_subscriber.py" name="camera_subscriber" output="screen" />
+  <node pkg="car_tracker_node" type="tracker_controller.py" name="tracker_controller" output="screen" />
+  <node pkg="car_tracker_node" type="mavros_commander.py" name="mavros_commander" output="screen" />
+</launch>
