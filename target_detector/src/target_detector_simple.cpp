@@ -74,7 +74,11 @@ void TargetDetector::pointCloudCallback(const sensor_msgs::PointCloud2ConstPtr &
     if (cloud->points.empty()) return;
 
     // Camera intrinsics
-    const float fx = 454.686f, fy = 454.686f, cx = 424.5f, cy = 240.5f;
+    const float fx = 910.712f;   // rounded from 910.7119750976562
+    const float fy = 910.912f;   // rounded from 910.9118041992188
+    const float cx = 652.760f;   // rounded from 652.760498046875
+    const float cy = 373.047f;   // rounded from 373.0473327636719
+
 
     pcl::PointCloud<pcl::PointXYZ>::Ptr filtered_cloud(new pcl::PointCloud<pcl::PointXYZ>());
     for (const auto &pt : cloud->points)
